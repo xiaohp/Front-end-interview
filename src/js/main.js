@@ -33,3 +33,31 @@ var count_string = function(arr) {
 	}
 	return result
 }
+
+// 2. 给定排序数组求交集
+
+var intersection = function(a, b) {
+    var o = {}
+    for (var i = 0; i < a.length; i++) {
+        var e = a[i]
+        if (o[e] === undefined) {
+            o[e] = e
+        }
+    }
+
+    var l = []
+    for (var j = 0; j < b.length; j++) {
+        var n = b[j]
+        if (o[n] !== undefined) {
+            l.push(o[n])
+        }
+    }
+    return l
+}
+
+var test_intersection = function() {
+    var a1 = [1, 2, 2, 3, 4]
+    var a2 = [2, 3, 3, 4, 6, 7]
+    console.log('r', intersection(a1, a2));
+}
+test_intersection()
