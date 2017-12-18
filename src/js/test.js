@@ -1,4 +1,4 @@
-
+// 测试方法
 var ensure = function(a, b, message) {
     var condition = JSON.stringify(a) === JSON.stringify(b)
     if (!condition) {
@@ -14,4 +14,19 @@ var test_count_string = function() {
     ensure(count_string(a), res_a, 'count_string test 1 error')
     ensure(count_string(b), res_b, 'count_string test 2 error')
 }
-test_count_string()
+
+
+var test_intersection = function() {
+    var a1 = [1, 2, 3, 4]
+    var a2 = [2, 3, 4, 6, 7]
+    var res = [2, 3, 4]
+    ensure(intersection(a1, a2), res, 'intersection test 1 error')
+}
+
+
+
+var __main = function() {
+    test_count_string()
+    test_intersection()
+}
+__main()
